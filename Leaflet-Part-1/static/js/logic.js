@@ -1,8 +1,13 @@
 // Create the 'basemap' tile layer that will be the background of our map.
-
+let basemap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap contributors"
+});
 
 // OPTIONAL: Step 2
-// Create the 'street' tile layer as a second background of the map
+// Create the 'street' tile layer as a second background of the map.
+let street = L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team"
+});
 
 
 // Create the map object with center and zoom options.
