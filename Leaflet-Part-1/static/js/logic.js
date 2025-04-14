@@ -106,17 +106,18 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     return div;
   };
 
-
-  // Finally, add the legend to the map.
-
+  // Add the legend to the map
+  legend.addTo(map);
 
   // OPTIONAL: Step 2
-  // Make a request to get our Tectonic Plate geoJSON data.
-  d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function (plate_data) {
-    // Save the geoJSON data, along with style information, to the tectonic_plates layer.
+  // Add tectonic plates GeoJSON
+  d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function (plateData) {
+    L.geoJson(plateData, {
+      color: "orange",
+      weight: 2
+    }).addTo(tectonicPlates);
 
-
-    // Then add the tectonic_plates layer to the map.
-
+    // Add to the map
+    tectonicPlates.addTo(map);
   });
 });
