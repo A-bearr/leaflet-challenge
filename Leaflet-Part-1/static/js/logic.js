@@ -9,15 +9,20 @@ let street = L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
   attribution: "© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team"
 });
 
-
 // Create the map object with center and zoom options.
-
+let map = L.map("map", {
+  center: [37.09, -95.71], // Center of the US
+  zoom: 4,
+  layers: [basemap]
+});
 
 // Then add the 'basemap' tile layer to the map.
+basemap.addTo(map);
 
 // OPTIONAL: Step 2
-// Create the layer groups, base maps, and overlays for our two sets of data, earthquakes and tectonic_plates.
-// Add a control to the map that will allow the user to change which layers are visible.
+// Create the layer groups for earthquakes and tectonic plates.
+let earthquakes = new L.LayerGroup();
+let tectonicPlates = new L.LayerGroup();
 
 
 // Make a request that retrieves the earthquake geoJSON data.
