@@ -1,8 +1,9 @@
 # leaflet-challenge
-Module 15 Challenge 
-For this challege I combined part one and two into a single Js file for ease.
+Module 15 Challenge.
 
-##Overview
+For this challege I combined part one and two for a cleaner personal workflow.
+
+## Overview
 
 This project uses Leaflet.js, D3.js, and USGS GeoJSON data to visualize all earthquakes that occurred in the past 7 days. It features dynamic circle markers where:
 
@@ -12,7 +13,7 @@ Popups display location, magnitude, and depth.
 A legend helps interpret the depth-to-color scale.
 Includes optional support for tectonic plate boundaries.
 
-##Files
+## Files
 
 index.html — Main HTML structure.
 logic.js — JavaScript for map creation, styling, and data binding.
